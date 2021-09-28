@@ -1,21 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-</body>
-<form method="POST" action="<?php echo url('/create');?>">
-<input type="hidden" name="_token" value="<?php echo csrf_token();?>">
+<body>
+
+<div class="container">
+  <h2>Register</h2>
+  <form method="post" action= "{{url('/create')}}"  enctype ="multipart/form-data">
+
+  <input type="hidden" name="_token" value="<?php echo csrf_token();?>">
+
+
   <div class="form-group">
-    <label for="exampleInputEmail1">User Name</label>
-    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
-  <div class="form-group">
-    <label for="exampleInputPassword1">Phone Number</label>
-    <input type="text" name="phon" class="form-control" id="exampleInputPassword1" placeholder="Phon number">
+    <label for="exampleInputName">Name</label>
+    <input type="text" name="name"  class="form-control" id="exampleInputName" aria-describedby="" placeholder="Enter Name" required>
   </div>
+
+
+  <div class="form-group">
+    <label for="staticEmail">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword">New Password</label>
+    <input type="password" name="password"   class="form-control" id="exampleInputPassword" placeholder="Password" required minlength="6">
+  </div>
+
+
+  <div class="form-group">
+    <label for="exampleInputAddress">address</label>
+    <input type="text" name="address"   class="form-control" id="exampleInputAddress" placeholder="Address" required maxlength="10">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputAddress">Linkedin</label>
+    <input type="url" name="linkedin"  class="form-control" id="exampleInputLinkedin" placeholder="Linkedin" required>
+  </div>
+ 
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
